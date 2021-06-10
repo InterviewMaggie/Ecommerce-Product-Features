@@ -15,7 +15,9 @@
     display: block;
     margin-top: 15px;
 }
-
+.form-group {
+    margin-bottom: 5px;
+}
 .label-wrapper {
     float: right;
     display: flex;
