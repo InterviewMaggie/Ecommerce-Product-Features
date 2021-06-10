@@ -68,7 +68,7 @@
                             data-bs-parent="#sidenavAccordion">
                             <nav class="sb-sidenav-menu-nested nav">
                                 <a class="nav-link" href="layout-static.html">Products</a>
-                                <a class="nav-link" href="Categories.html">Categories</a>
+                                <a class="nav-link" href="layout-sidenav-light.html">Categories</a>
                                 <a class="nav-link" href="layout-sidenav-light.html">Product Attributes</a>
                             </nav>
                         </div>
@@ -125,7 +125,7 @@
                 <div class="container-fluid px-4">
 
                     <nav class="navbar navbar-light bg-light mt-4">
-                        <h1>Products</h1>
+                        <h1>Categories</h1>
                         <a class=" btn btn-primary inline " href="Create.html">
                             <i class="fas fa-plus-square"></i>
                             Add new
@@ -139,118 +139,28 @@
                     <!--   -->
                     <div class="card card-default card-search">
                         <div class="card-body">
-                            <div class="row search-row opened">
+                            <div class="row search-row opened" data-hideattribute="CategoryPage.HideSearchBlock">
                                 <div class="search-text">Search</div>
                                 <div class="icon-search"><i class="fas fa-search" aria-hidden="true"></i></div>
                                 <div class="icon-collapse"><i class="far fa-angle-up" aria-hidden="true"></i></div>
                             </div>
                             <div class="search-body ">
                                 <div class="row">
-                                    <div class="col-md-5">
-                                        <div class="form-group row">
-                                            <div class="col-md-4">
-                                                <div class="label-wrapper">
-                                                    <label class="col-form-label"for="SearchProductName">Product name</label>
-                                                    <div title="A product name." data-toggle="tooltip" class="ico-help">
-                                                        <i class="fas fa-question-circle"></i>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col-md-8">
-                                                <input class="form-control text-box single-line" id="SearchProductName"
-                                                    name="SearchProductName" type="text" value="">
-                                            </div>
-                                        </div>
+                                    <div class="col-md-6">
                                         <div class="form-group row">
                                             <div class="col-md-4">
                                                 <div class="label-wrapper"><label class="col-form-label"
-                                                        for="SearchCategoryId">Category</label>
+                                                        for="SearchCategoryName">Category name</label>
                                                     <div title="" data-toggle="tooltip" class="ico-help"
-                                                        data-original-title="Search by a specific category."><i
+                                                        data-original-title="A category name."><i
                                                             class="fas fa-question-circle"></i></div>
                                                 </div>
                                             </div>
                                             <div class="col-md-8">
-                                                <select class="form-control" data-val="true"
-                                                    data-val-required="The Category field is required."
-                                                    id="SearchCategoryId" name="SearchCategoryId">
-                                                    <option selected="selected" value="0">All</option>
-                                                    <option value="1">Computers</option>
-                                                    <option value="2">Computers &gt;&gt; Desktops</option>
-                                                    <option value="3">Computers &gt;&gt; Notebooks</option>
-                                                    <option value="4">Computers &gt;&gt; Software</option>
-                                                    <option value="5">Electronics</option>
-                                                    <option value="6">Electronics &gt;&gt; Camera &amp; photo</option>
-                                                    <option value="7">Electronics &gt;&gt; Cell phones</option>
-                                                    <option value="8">Electronics &gt;&gt; Others</option>
-                                                    <option value="9">Apparel</option>
-                                                    <option value="10">Apparel &gt;&gt; Shoes</option>
-                                                    <option value="11">Apparel &gt;&gt; Clothing</option>
-                                                    <option value="12">Apparel &gt;&gt; Accessories</option>
-                                                    <option value="13">Digital downloads</option>
-                                                    <option value="14">Books</option>
-                                                    <option value="15">Jewelry</option>
-                                                    <option value="16">Gift Cards</option>
-                                                </select>
+                                                <input class="form-control text-box single-line" id="SearchCategoryName"
+                                                    name="SearchCategoryName" type="text" value="">
                                             </div>
                                         </div>
-                                        <div class="form-group row">
-                                            <div class="col-md-4">
-                                                <div class="label-wrapper"><label class="col-form-label"
-                                                        for="SearchIncludeSubCategories">Search subcategories</label>
-                                                    <div title="" data-toggle="tooltip" class="ico-help"
-                                                        data-original-title="Check to search in subcategories."><i
-                                                            class="fas fa-question-circle"></i></div>
-                                                </div>
-                                            </div>
-                                            <div class="col-md-8">
-                                                <input class="check-box" data-val="true"
-                                                    data-val-required="The Search subcategories field is required."
-                                                    id="SearchIncludeSubCategories" name="SearchIncludeSubCategories"
-                                                    type="checkbox" value="true">
-                                            </div>
-                                        </div>
-                                        <div class="form-group row">
-                                            <div class="col-md-4">
-                                                <div class="label-wrapper"><label class="col-form-label"
-                                                        for="SearchManufacturerId">Manufacturer</label>
-                                                    <div title="" data-toggle="tooltip" class="ico-help"
-                                                        data-original-title="Search by a specific manufacturer."><i
-                                                            class="fas fa-question-circle"></i></div>
-                                                </div>
-                                            </div>
-                                            <div class="col-md-8">
-                                                <select class="form-control" data-val="true"
-                                                    data-val-required="The Manufacturer field is required."
-                                                    id="SearchManufacturerId" name="SearchManufacturerId">
-                                                    <option selected="selected" value="0">All</option>
-                                                    <option value="1">Apple</option>
-                                                    <option value="2">HP</option>
-                                                    <option value="3">Nike</option>
-                                                </select>
-                                            </div>
-                                        </div>
-                                        <div class="form-group row">
-                                            <div class="col-md-4">
-                                                <div class="label-wrapper"><label class="col-form-label"
-                                                        for="SearchVendorId">Vendor</label>
-                                                    <div title="" data-toggle="tooltip" class="ico-help"
-                                                        data-original-title="Search by a specific vendor."><i
-                                                            class="fas fa-question-circle"></i></div>
-                                                </div>
-                                            </div>
-                                            <div class="col-md-8">
-                                                <select class="form-control" data-val="true"
-                                                    data-val-required="The Vendor field is required." id="SearchVendorId"
-                                                    name="SearchVendorId">
-                                                    <option selected="selected" value="0">All</option>
-                                                    <option value="1">Vendor 1</option>
-                                                    <option value="2">Vendor 2</option>
-                                                </select>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-7">
                                         <div class="form-group row" style="display:none">
                                             <div class="col-md-4">
                                                 <div class="label-wrapper"><label class="col-form-label"
@@ -270,52 +180,15 @@
                                                 </select>
                                             </div>
                                         </div>
-                                        <div class="form-group row">
-                                            <div class="col-md-4">
-                                                <div class="label-wrapper"><label class="col-form-label"
-                                                        for="SearchWarehouseId">Warehouse</label>
-                                                    <div title="" data-toggle="tooltip" class="ico-help"
-                                                        data-original-title="Search by a specific warehouse."><i
-                                                            class="fas fa-question-circle"></i></div>
-                                                </div>
-                                            </div>
-                                            <div class="col-md-8">
-                                                <select class="form-control" data-val="true"
-                                                    data-val-required="The Warehouse field is required."
-                                                    id="SearchWarehouseId" name="SearchWarehouseId">
-                                                    <option selected="selected" value="0">All</option>
-                                                    <option value="1">Warehouse 1 (Nairobi Kenya)</option>
-                                                    <option value="2">Warehouse 2 (Mombase Kenya)</option>
-                                                </select>
-                                            </div>
-                                        </div>
-                                        <div class="form-group row">
-                                            <div class="col-md-4">
-                                                <div class="label-wrapper"><label class="col-form-label"
-                                                        for="SearchProductTypeId">Product type</label>
-                                                    <div title="" data-toggle="tooltip" class="ico-help"
-                                                        data-original-title="Search by a product type."><i
-                                                            class="fas fa-question-circle"></i></div>
-                                                </div>
-                                            </div>
-                                            <div class="col-md-8">
-                                                <select class="form-control valid" data-val="true"
-                                                    data-val-required="The Product type field is required."
-                                                    id="SearchProductTypeId" name="SearchProductTypeId"
-                                                    aria-describedby="SearchProductTypeId-error" aria-invalid="false">
-                                                    <option selected="selected" value="0">All</option>
-                                                    <option value="5">Simple</option>
-                                                    <option value="10">Grouped (product with variants)</option>
-                                                </select>
-                                            </div>
-                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
                                         <div class="form-group row">
                                             <div class="col-md-4">
                                                 <div class="label-wrapper"><label class="col-form-label"
                                                         for="SearchPublishedId">Published</label>
                                                     <div title="" data-toggle="tooltip" class="ico-help"
-                                                        data-original-title="Search by a &quot;Published&quot; property."><i
-                                                            class="fas fa-question-circle"></i></div>
+                                                        data-original-title="Search by a &quot;Published&quot; property.">
+                                                        <i class="fas fa-question-circle"></i></div>
                                                 </div>
                                             </div>
                                             <div class="col-md-8">
@@ -328,42 +201,19 @@
                                                 </select>
                                             </div>
                                         </div>
-                                        <div class="form-group row">
-                                            <div class="col-md-4">
-                                                <div class="label-wrapper"><label class="col-form-label"
-                                                        for="GoDirectlyToSku">Go directly to product SKU</label>
-                                                    <div title="" data-toggle="tooltip" class="ico-help"
-                                                        data-original-title="Enter product SKU and click Go."><i
-                                                            class="fas fa-question-circle"></i></div>
-                                                </div>
-                                            </div>
-                                            <div class="col-md-8">
-                                                <div class="input-group input-group-short">
-                                                    <input class="form-control text-box single-line" id="GoDirectlyToSku"
-                                                        name="GoDirectlyToSku" type="text" value="">
-                                                    <span class="input-group-append">
-                                                        <button type="submit" id="go-to-product-by-sku"
-                                                            name="go-to-product-by-sku" class="btn btn-info btn-flat">
-                                                            Go
-                                                        </button>
-                                                    </span>
-                                                </div>
-                                            </div>
-                                        </div>
                                     </div>
                                 </div>
-                                <div class="row">
+                                <div class="form-group row">
                                     <div class="text-center col-12">
-                                        <button type="button" id="search-products" class="btn btn-primary btn-search">
-                                            <i class="fas fa-search"></i>
-                                            Search
-                                        </button>
+                                        <button type="button" id="search-categories"
+                                            class="btn btn-primary btn-search"><i
+                                                class="fas fa-search"></i>Search</button>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    
+
                     <!---->
                     <div class="card mb-4">
                         <div class="card-header">
@@ -397,7 +247,8 @@
                                 <tbody>
                                     <tr>
                                         <td>
-                                            <img src="https://admin-demo.nopcommerce.com/images/thumbs/0000020_build-your-own-computer_75.jpeg">
+                                            <img
+                                                src="https://admin-demo.nopcommerce.com/images/thumbs/0000020_build-your-own-computer_75.jpeg">
                                         </td>
                                         <td>Build your own computer</td>
                                         <td>COMP_CUST</td>
@@ -406,11 +257,13 @@
                                         <td class="text-center">
                                             <i class="fas fa-check true-icon" nop-value="true"></i>
                                         </td>
-                                        <td><a class="btn btn-default" href="Edit/1"><i class="fas fa-pencil-alt"></i>Edit</a></td>
+                                        <td><a class="btn btn-default" href="Edit/1"><i
+                                                    class="fas fa-pencil-alt"></i>Edit</a></td>
                                     </tr>
                                     <tr>
                                         <td>
-                                            <img src="https://admin-demo.nopcommerce.com/images/thumbs/0000022_digital-storm-vanquish-3-custom-performance-pc_75.jpeg">
+                                            <img
+                                                src="https://admin-demo.nopcommerce.com/images/thumbs/0000022_digital-storm-vanquish-3-custom-performance-pc_75.jpeg">
                                         </td>
                                         <td>Digital Storm VANQUISH 3 Custom Performance PC</td>
                                         <td>DS_VA3_PC</td>
@@ -419,32 +272,38 @@
                                         <td class="text-center">
                                             <i class="fas fa-check true-icon" nop-value="true"></i>
                                         </td>
-                                        <td><a class="btn btn-default" href="Edit/1"><i class="fas fa-pencil-alt"></i>Edit</a></td>
+                                        <td><a class="btn btn-default" href="Edit/1"><i
+                                                    class="fas fa-pencil-alt"></i>Edit</a></td>
                                     </tr>
                                     <tr>
                                         <td>
-                                            <img src="https://admin-demo.nopcommerce.com/images/thumbs/0000023_lenovo-ideacentre-600-all-in-one-pc_75.jpeg">
+                                            <img
+                                                src="https://admin-demo.nopcommerce.com/images/thumbs/0000023_lenovo-ideacentre-600-all-in-one-pc_75.jpeg">
                                         </td>
                                         <td>Lenovo IdeaCentre 600 All-in-One PC</td>
                                         <td>LE_IC_600</td>
-                                        <td>	500</td>
+                                        <td> 500</td>
                                         <td>100</td>
                                         <td class="text-center">
                                             <i class="fas fa-check true-icon" nop-value="true"></i>
                                         </td>
-                                        <td><a class="btn btn-default" href="Edit/1"><i class="fas fa-pencil-alt"></i>Edit</a></td>
+                                        <td><a class="btn btn-default" href="Edit/1"><i
+                                                    class="fas fa-pencil-alt"></i>Edit</a></td>
                                     </tr>
                                     <tr>
                                         <td>
-                                            <img src="https://admin-demo.nopcommerce.com/images/thumbs/0000024_apple-macbook-pro-13-inch_75.jpeg">
+                                            <img
+                                                src="https://admin-demo.nopcommerce.com/images/thumbs/0000024_apple-macbook-pro-13-inch_75.jpeg">
                                         </td>
                                         <td>Apple MacBook Pro 13-inch</td>
                                         <td>AP_MBP_13</td>
                                         <td>1200</td>
                                         <td>100</td>
                                         <td class="text-center">
-                                            <i class="fas fa-check true-icon" nop-value="true"></i></td>
-                                        <td><a class="btn btn-default" href="Edit/1"><i class="fas fa-pencil-alt"></i>Edit</a></td>
+                                            <i class="fas fa-check true-icon" nop-value="true"></i>
+                                        </td>
+                                        <td><a class="btn btn-default" href="Edit/1"><i
+                                                    class="fas fa-pencil-alt"></i>Edit</a></td>
                                     </tr>
                                 </tbody>
                             </table>
