@@ -1,227 +1,479 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-        <meta name="description" content="" />
-        <meta name="author" content="" />
-        <title> Products - Admin</title>
-        <link href="css/styles.css" rel="stylesheet" />
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js" crossorigin="anonymous"></script>
-        <link href="https://cdn.jsdelivr.net/npm/simple-datatables@latest/dist/style.css" rel="stylesheet" />
-        
-    </head>
-    <body>
-        <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
-            <!-- Navbar Brand-->
-            <a class="navbar-brand ps-3" href="index.html">E-Commerce</a>
-            <!-- Sidebar Toggle-->
-            <button class="btn btn-link btn-sm order-1 order-lg-0 me-4 me-lg-0" id="sidebarToggle" href="#!"><i class="fas fa-bars"></i></button>
-            <!-- Navbar Search-->
-            <form class="d-none d-md-inline-block form-inline ms-auto me-0 me-md-3 my-2 my-md-0">
-                <div class="input-group">
-                    <input class="form-control" type="text" placeholder="Search for..." aria-label="Search for..." aria-describedby="btnNavbarSearch" />
-                    <button class="btn btn-primary" id="btnNavbarSearch" type="button"><i class="fas fa-search"></i></button>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <title>Dashboard - Ecommerce Admin</title>
+    <link href="https://cdn.jsdelivr.net/npm/simple-datatables@latest/dist/style.css" rel="stylesheet" />
+    <link href="css/styles.css" rel="stylesheet" />
+    <link href="css/product.css" rel="stylesheet" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js"
+        crossorigin="anonymous"></script>
+</head>
+
+<body class="sb-nav-fixed">
+    <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
+        <!-- Navbar Brand-->
+        <a class="navbar-brand ps-3" href="index.html">E-Commerce</a>
+        <!-- Sidebar Toggle-->
+        <button class="btn btn-link btn-sm order-1 order-lg-0 me-4 me-lg-0" id="sidebarToggle" href="#!"><i
+                class="fas fa-bars"></i></button>
+        <!-- Navbar Search-->
+        <form class="d-none d-md-inline-block form-inline ms-auto me-0 me-md-3 my-2 my-md-0">
+            <div class="input-group">
+                <input class="form-control" type="text" placeholder="Search for..." aria-label="Search for..."
+                    aria-describedby="btnNavbarSearch" />
+                <button class="btn btn-primary" id="btnNavbarSearch" type="button"><i
+                        class="fas fa-search"></i></button>
+            </div>
+        </form>
+        <!-- Navbar-->
+        <ul class="navbar-nav ms-auto ms-md-0 me-3 me-lg-4">
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown"
+                    aria-expanded="false"><i class="fas fa-user fa-fw"></i></a>
+                <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                    <li><a class="dropdown-item" href="#!">Settings</a></li>
+                    <li><a class="dropdown-item" href="#!">Activity Log</a></li>
+                    <li>
+                        <hr class="dropdown-divider" />
+                    </li>
+                    <li><a class="dropdown-item" href="#!">Logout</a></li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+    <div id="layoutSidenav">
+        <div id="layoutSidenav_nav">
+            <nav class="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion">
+                <div class="sb-sidenav-menu">
+                    <div class="nav">
+                        <div class="sb-sidenav-menu-heading">Core</div>
+                        <a class="nav-link" href="index.html">
+                            <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
+                            Dashboard
+                        </a>
+                        <div class="sb-sidenav-menu-heading">Interface</div>
+                        <a class="nav-link collapsed" href="#" data-bs-toggle="collapse"
+                            data-bs-target="#collapseLayouts" aria-expanded="false" aria-controls="collapseLayouts">
+                            <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
+                            Catalogue
+                            <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                        </a>
+                        <div class="collapse" id="collapseLayouts" aria-labelledby="headingOne"
+                            data-bs-parent="#sidenavAccordion">
+                            <nav class="sb-sidenav-menu-nested nav">
+                                <a class="nav-link" href="layout-static.html">Products</a>
+                                <a class="nav-link" href="layout-sidenav-light.html">Categories</a>
+                                <a class="nav-link" href="layout-sidenav-light.html">Product Attributes</a>
+                            </nav>
+                        </div>
+                        <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapsePages"
+                            aria-expanded="false" aria-controls="collapsePages">
+                            <div class="sb-nav-link-icon"><i class="fas fa-book-open"></i></div>
+                            Pages
+                            <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                        </a>
+                        <div class="collapse" id="collapsePages" aria-labelledby="headingTwo"
+                            data-bs-parent="#sidenavAccordion">
+                            <nav class="sb-sidenav-menu-nested nav accordion" id="sidenavAccordionPages">
+                                <a class="nav-link collapsed" href="#" data-bs-toggle="collapse"
+                                    data-bs-target="#pagesCollapseAuth" aria-expanded="false"
+                                    aria-controls="pagesCollapseAuth">
+                                    Authentication
+                                    <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                                </a>
+                                <div class="collapse" id="pagesCollapseAuth" aria-labelledby="headingOne"
+                                    data-bs-parent="#sidenavAccordionPages">
+                                    <nav class="sb-sidenav-menu-nested nav">
+                                        <a class="nav-link" href="login.html">Login</a>
+                                        <a class="nav-link" href="register.html">Register</a>
+                                        <a class="nav-link" href="password.html">Forgot Password</a>
+                                    </nav>
+                                </div>
+                                <a class="nav-link collapsed" href="#" data-bs-toggle="collapse"
+                                    data-bs-target="#pagesCollapseError" aria-expanded="false"
+                                    aria-controls="pagesCollapseError">
+                                    Error
+                                    <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                                </a>
+                                <div class="collapse" id="pagesCollapseError" aria-labelledby="headingOne"
+                                    data-bs-parent="#sidenavAccordionPages">
+                                    <nav class="sb-sidenav-menu-nested nav">
+                                        <a class="nav-link" href="401.html">401 Page</a>
+                                        <a class="nav-link" href="404.html">404 Page</a>
+                                        <a class="nav-link" href="500.html">500 Page</a>
+                                    </nav>
+                                </div>
+                            </nav>
+                        </div>
+
+                    </div>
                 </div>
-            </form>
-            <!-- Navbar-->
-            <ul class="navbar-nav ms-auto ms-md-0 me-3 me-lg-4">
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="fas fa-user fa-fw"></i></a>
-                    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                        <li><a class="dropdown-item" href="#!">Settings</a></li>
-                        <li><a class="dropdown-item" href="#!">Activity Log</a></li>
-                        <li><hr class="dropdown-divider" /></li>
-                        <li><a class="dropdown-item" href="#!">Logout</a></li>
-                    </ul>
-                </li>
-            </ul>
-        </nav>
-        <div id="layoutSidenav">
-            <div id="layoutSidenav_nav">
-                <nav class="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion">
-                    <div class="sb-sidenav-menu">
-                        <div class="nav">
-                            <div class="sb-sidenav-menu-heading">Core</div>
-                            <a class="nav-link" href="index.html">
-                                <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
-                                Dashboard
-                            </a>
-                            <div class="sb-sidenav-menu-heading">Interface</div>
-                            <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseLayouts" aria-expanded="false" aria-controls="collapseLayouts">
-                                <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
-                                Catalogue
-                                <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
-                            </a>
-                            <div class="collapse" id="collapseLayouts" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
-                                <nav class="sb-sidenav-menu-nested nav">
-                                    <a class="nav-link" href="layout-static.html">Products</a>
-                                    <a class="nav-link" href="layout-sidenav-light.html">Categories</a>
-                                    <a class="nav-link" href="layout-sidenav-light.html">Product Attributes</a>
-                                </nav>
-                            </div>
-                            <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapsePages" aria-expanded="false" aria-controls="collapsePages">
-                                <div class="sb-nav-link-icon"><i class="fas fa-book-open"></i></div>
-                                Pages
-                                <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
-                            </a>
-                            <div class="collapse" id="collapsePages" aria-labelledby="headingTwo" data-bs-parent="#sidenavAccordion">
-                                <nav class="sb-sidenav-menu-nested nav accordion" id="sidenavAccordionPages">
-                                    <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#pagesCollapseAuth" aria-expanded="false" aria-controls="pagesCollapseAuth">
-                                        Authentication
-                                        <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
-                                    </a>
-                                    <div class="collapse" id="pagesCollapseAuth" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordionPages">
-                                        <nav class="sb-sidenav-menu-nested nav">
-                                            <a class="nav-link" href="login.html">Login</a>
-                                            <a class="nav-link" href="register.html">Register</a>
-                                            <a class="nav-link" href="password.html">Forgot Password</a>
-                                        </nav>
-                                    </div>
-                                    <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#pagesCollapseError" aria-expanded="false" aria-controls="pagesCollapseError">
-                                        Error
-                                        <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
-                                    </a>
-                                    <div class="collapse" id="pagesCollapseError" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordionPages">
-                                        <nav class="sb-sidenav-menu-nested nav">
-                                            <a class="nav-link" href="401.html">401 Page</a>
-                                            <a class="nav-link" href="404.html">404 Page</a>
-                                            <a class="nav-link" href="500.html">500 Page</a>
-                                        </nav>
-                                    </div>
-                                </nav>
-                            </div>
-                           
-                        </div>
-                    </div>
-                    <div class="sb-sidenav-footer">
-                        <div class="small">Logged in as:</div>
-                        E-Commerce
-                    </div>
-                </nav>
-            </div>
-            <div id="layoutSidenav_content">
-                <main>
-                    <div class="container-fluid px-4">
-                        
-                     <nav class="navbar navbar-light bg-light mt-4">
-                            <h1 >Products</h1>
-                            <a class=" btn btn-primary inline " href="/Admin/Product/Create">
-                                <i class="fas fa-plus-square"></i>
-                               Add new
-                            </a>
-                          </nav>
-                        <ol class="breadcrumb mb-4">
-                            <li class="breadcrumb-item"><a href="index.html">Dashboard</a></li>
-                            <li class="breadcrumb-item active">Product</li>
-                        </ol>
-                        <div class="card mb-4">
-                            <div class="card-body">
-                                <table id="datatablesSimple">
-                                    <thead>
-                                        <tr>
-                                            <th>Picture</th>
-                                            <th>Product name</th>
-                                            <th>SKU</th>
-                                            <th>Price</th>
-                                            <th>Stock quantity</th>
-                                            <th>Edit</th>
-                                        </tr>
-                                    </thead>
-                                    <tfoot>
-                                        <tr>
-                                            <th>Picture</th>
-                                            <th>Product name</th>
-                                            <th>SKU</th>
-                                            <th>Price</th>
-                                            <th>Stock quantity</th>
-                                            <th>Edit</th>
-                                        </tr>
-                                    </tfoot>
-                                    <tbody>
-                                        <tr>
-                                            <td>
-                                                <img src="https://admin-demo.nopcommerce.com/images/thumbs/0000020_build-your-own-computer_75.jpeg">
-                                            </td>
-                                            <td>Build your own computer</td>
-                                            <td>COMP_CUST</td>
-                                            <td>Ksh 1200</td>
-                                            <td>Ksh 100</td>
-                                            <td>ksh 320,800</td>
-                                        </tr>
-
-                                        <tr>
-                                            <td>
-                                                <img src="https://admin-demo.nopcommerce.com/images/thumbs/0000020_build-your-own-computer_75.jpeg">
-                                            </td>
-                                            <td>Build your own computer</td>
-                                            <td>COMP_CUST</td>
-                                            <td>Ksh 1200</td>
-                                            <td>Ksh 100</td>
-                                            <td>ksh 320,800</td>
-                                        </tr>
-
-                                        <tr>
-                                            <td>
-                                                <img src="https://admin-demo.nopcommerce.com/images/thumbs/0000020_build-your-own-computer_75.jpeg">
-                                            </td>
-                                            <td>Build your own computer</td>
-                                            <td>COMP_CUST</td>
-                                            <td>Ksh 1200</td>
-                                            <td>Ksh 100</td>
-                                            <td>ksh 320,800</td>
-                                        </tr>
-
-                                        <tr>
-                                            <td>
-                                                <img src="https://admin-demo.nopcommerce.com/images/thumbs/0000020_build-your-own-computer_75.jpeg">
-                                            </td>
-                                            <td>Build your own computer</td>
-                                            <td>COMP_CUST</td>
-                                            <td>Ksh 1200</td>
-                                            <td>Ksh 100</td>
-                                            <td>ksh 320,800</td>
-                                        </tr>
-
-                                        <tr>
-                                            <td>
-                                                <img src="https://admin-demo.nopcommerce.com/images/thumbs/0000020_build-your-own-computer_75.jpeg">
-                                            </td>
-                                            <td>Build your own computer</td>
-                                            <td>COMP_CUST</td>
-                                            <td>Ksh 1200</td>
-                                            <td>Ksh 100</td>
-                                            <td>ksh 320,800</td>
-                                        </tr>
-
-
-                                      
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
-                        <div style="height: 100vh"></div>
-                        <div class="card mb-4"><div class="card-body">When scrolling, the navigation stays at the top of the page. This is the end of the static navigation demo.</div></div>
-                    </div>
-                </main>
-                <footer class="py-4 bg-light mt-auto">
-                    <div class="container-fluid px-4">
-                        <div class="d-flex align-items-center justify-content-between small">
-                            <div class="text-muted">Copyright &copy; Your Website 2021</div>
-                            <div>
-                                <a href="#">Privacy Policy</a>
-                                &middot;
-                                <a href="#">Terms &amp; Conditions</a>
-                            </div>
-                        </div>
-                    </div>
-                </footer>
-            </div>
+                <div class="sb-sidenav-footer">
+                    <div class="small">Logged in as:</div>
+                    E-Commerce
+                </div>
+            </nav>
         </div>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
-        <script src="js/scripts.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/simple-datatables@latest" crossorigin="anonymous"></script>
-        <script src="js/datatables-simple-demo.js"></script>
-    </body>
+        <div id="layoutSidenav_content">
+            <main>
+                <div class="container-fluid px-4">
+
+                    <nav class="navbar navbar-light bg-light mt-4">
+                        <h1>Products</h1>
+                        <a class=" btn btn-primary inline " href="/Admin/Product/Create">
+                            <i class="fas fa-plus-square"></i>
+                            Add new
+                        </a>
+                    </nav>
+                    <ol class="breadcrumb mb-4">
+                        <li class="breadcrumb-item"><a href="index.html">Dashboard</a></li>
+                        <li class="breadcrumb-item active">Product</li>
+                    </ol>
+
+                    <!--   -->
+                    <div class="card card-default card-search">
+                        <div class="card-body">
+                            <div class="row search-row opened">
+                                <div class="search-text">Search</div>
+                                <div class="icon-search"><i class="fas fa-search" aria-hidden="true"></i></div>
+                                <div class="icon-collapse"><i class="far fa-angle-up" aria-hidden="true"></i></div>
+                            </div>
+                            <div class="search-body ">
+                                <div class="row">
+                                    <div class="col-md-5">
+                                        <div class="form-group row">
+                                            <div class="col-md-4">
+                                                <div class="label-wrapper">
+                                                    <label class="col-form-label"for="SearchProductName">Product name</label>
+                                                    <div title="A product name." data-toggle="tooltip" class="ico-help">
+                                                        <i class="fas fa-question-circle"></i>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-8">
+                                                <input class="form-control text-box single-line" id="SearchProductName"
+                                                    name="SearchProductName" type="text" value="">
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <div class="col-md-4">
+                                                <div class="label-wrapper"><label class="col-form-label"
+                                                        for="SearchCategoryId">Category</label>
+                                                    <div title="" data-toggle="tooltip" class="ico-help"
+                                                        data-original-title="Search by a specific category."><i
+                                                            class="fas fa-question-circle"></i></div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-8">
+                                                <select class="form-control" data-val="true"
+                                                    data-val-required="The Category field is required."
+                                                    id="SearchCategoryId" name="SearchCategoryId">
+                                                    <option selected="selected" value="0">All</option>
+                                                    <option value="1">Computers</option>
+                                                    <option value="2">Computers &gt;&gt; Desktops</option>
+                                                    <option value="3">Computers &gt;&gt; Notebooks</option>
+                                                    <option value="4">Computers &gt;&gt; Software</option>
+                                                    <option value="5">Electronics</option>
+                                                    <option value="6">Electronics &gt;&gt; Camera &amp; photo</option>
+                                                    <option value="7">Electronics &gt;&gt; Cell phones</option>
+                                                    <option value="8">Electronics &gt;&gt; Others</option>
+                                                    <option value="9">Apparel</option>
+                                                    <option value="10">Apparel &gt;&gt; Shoes</option>
+                                                    <option value="11">Apparel &gt;&gt; Clothing</option>
+                                                    <option value="12">Apparel &gt;&gt; Accessories</option>
+                                                    <option value="13">Digital downloads</option>
+                                                    <option value="14">Books</option>
+                                                    <option value="15">Jewelry</option>
+                                                    <option value="16">Gift Cards</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <div class="col-md-4">
+                                                <div class="label-wrapper"><label class="col-form-label"
+                                                        for="SearchIncludeSubCategories">Search subcategories</label>
+                                                    <div title="" data-toggle="tooltip" class="ico-help"
+                                                        data-original-title="Check to search in subcategories."><i
+                                                            class="fas fa-question-circle"></i></div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-8">
+                                                <input class="check-box" data-val="true"
+                                                    data-val-required="The Search subcategories field is required."
+                                                    id="SearchIncludeSubCategories" name="SearchIncludeSubCategories"
+                                                    type="checkbox" value="true">
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <div class="col-md-4">
+                                                <div class="label-wrapper"><label class="col-form-label"
+                                                        for="SearchManufacturerId">Manufacturer</label>
+                                                    <div title="" data-toggle="tooltip" class="ico-help"
+                                                        data-original-title="Search by a specific manufacturer."><i
+                                                            class="fas fa-question-circle"></i></div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-8">
+                                                <select class="form-control" data-val="true"
+                                                    data-val-required="The Manufacturer field is required."
+                                                    id="SearchManufacturerId" name="SearchManufacturerId">
+                                                    <option selected="selected" value="0">All</option>
+                                                    <option value="1">Apple</option>
+                                                    <option value="2">HP</option>
+                                                    <option value="3">Nike</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <div class="col-md-4">
+                                                <div class="label-wrapper"><label class="col-form-label"
+                                                        for="SearchVendorId">Vendor</label>
+                                                    <div title="" data-toggle="tooltip" class="ico-help"
+                                                        data-original-title="Search by a specific vendor."><i
+                                                            class="fas fa-question-circle"></i></div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-8">
+                                                <select class="form-control" data-val="true"
+                                                    data-val-required="The Vendor field is required." id="SearchVendorId"
+                                                    name="SearchVendorId">
+                                                    <option selected="selected" value="0">All</option>
+                                                    <option value="1">Vendor 1</option>
+                                                    <option value="2">Vendor 2</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-7">
+                                        <div class="form-group row" style="display:none">
+                                            <div class="col-md-4">
+                                                <div class="label-wrapper"><label class="col-form-label"
+                                                        for="SearchStoreId">Store</label>
+                                                    <div title="" data-toggle="tooltip" class="ico-help"
+                                                        data-original-title="Search by a specific store."><i
+                                                            class="fas fa-question-circle"></i></div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-8">
+                                                <select class="form-control" data-val="true"
+                                                    data-val-required="The Store field is required." id="SearchStoreId"
+                                                    name="SearchStoreId">
+                                                    <option selected="selected" value="0">All</option>
+                                                    <option value="1">Your store name</option>
+                                                    <option value="2">Test store 2</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <div class="col-md-4">
+                                                <div class="label-wrapper"><label class="col-form-label"
+                                                        for="SearchWarehouseId">Warehouse</label>
+                                                    <div title="" data-toggle="tooltip" class="ico-help"
+                                                        data-original-title="Search by a specific warehouse."><i
+                                                            class="fas fa-question-circle"></i></div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-8">
+                                                <select class="form-control" data-val="true"
+                                                    data-val-required="The Warehouse field is required."
+                                                    id="SearchWarehouseId" name="SearchWarehouseId">
+                                                    <option selected="selected" value="0">All</option>
+                                                    <option value="1">Warehouse 1 (Nairobi Kenya)</option>
+                                                    <option value="2">Warehouse 2 (Mombase Kenya)</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <div class="col-md-4">
+                                                <div class="label-wrapper"><label class="col-form-label"
+                                                        for="SearchProductTypeId">Product type</label>
+                                                    <div title="" data-toggle="tooltip" class="ico-help"
+                                                        data-original-title="Search by a product type."><i
+                                                            class="fas fa-question-circle"></i></div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-8">
+                                                <select class="form-control valid" data-val="true"
+                                                    data-val-required="The Product type field is required."
+                                                    id="SearchProductTypeId" name="SearchProductTypeId"
+                                                    aria-describedby="SearchProductTypeId-error" aria-invalid="false">
+                                                    <option selected="selected" value="0">All</option>
+                                                    <option value="5">Simple</option>
+                                                    <option value="10">Grouped (product with variants)</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <div class="col-md-4">
+                                                <div class="label-wrapper"><label class="col-form-label"
+                                                        for="SearchPublishedId">Published</label>
+                                                    <div title="" data-toggle="tooltip" class="ico-help"
+                                                        data-original-title="Search by a &quot;Published&quot; property."><i
+                                                            class="fas fa-question-circle"></i></div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-8">
+                                                <select class="form-control" data-val="true"
+                                                    data-val-required="The Published field is required."
+                                                    id="SearchPublishedId" name="SearchPublishedId">
+                                                    <option selected="selected" value="0">All</option>
+                                                    <option value="1">Published only</option>
+                                                    <option value="2">Unpublished only</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <div class="col-md-4">
+                                                <div class="label-wrapper"><label class="col-form-label"
+                                                        for="GoDirectlyToSku">Go directly to product SKU</label>
+                                                    <div title="" data-toggle="tooltip" class="ico-help"
+                                                        data-original-title="Enter product SKU and click Go."><i
+                                                            class="fas fa-question-circle"></i></div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-8">
+                                                <div class="input-group input-group-short">
+                                                    <input class="form-control text-box single-line" id="GoDirectlyToSku"
+                                                        name="GoDirectlyToSku" type="text" value="">
+                                                    <span class="input-group-append">
+                                                        <button type="submit" id="go-to-product-by-sku"
+                                                            name="go-to-product-by-sku" class="btn btn-info btn-flat">
+                                                            Go
+                                                        </button>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="text-center col-12">
+                                        <button type="button" id="search-products" class="btn btn-primary btn-search">
+                                            <i class="fas fa-search"></i>
+                                            Search
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!---->
+                    <div class="card mb-4">
+                        <div class="card-header">
+                            <i class="far fa-money-bill-alt me-1"></i>
+                            Order totals
+                        </div>
+                        <div class="card-body">
+                            <table id="datatablesSimple">
+                                <thead>
+                                    <tr>
+                                        <th>Picture</th>
+                                        <th>Product name</th>
+                                        <th>SKU</th>
+                                        <th>Price</th>
+                                        <th>Stock quantity</th>
+                                        <th>Published</th>
+                                        <th>Edit</th>
+                                    </tr>
+                                </thead>
+                                <tfoot>
+                                    <tr>
+                                        <th>Picture</th>
+                                        <th>Product name</th>
+                                        <th>SKU</th>
+                                        <th>Price</th>
+                                        <th>Stock quantity</th>
+                                        <th>Published</th>
+                                        <th>Edit</th>
+                                    </tr>
+                                </tfoot>
+                                <tbody>
+                                    <tr>
+                                        <td>
+                                            <img src="https://admin-demo.nopcommerce.com/images/thumbs/0000020_build-your-own-computer_75.jpeg">
+                                        </td>
+                                        <td>Build your own computer</td>
+                                        <td>COMP_CUST</td>
+                                        <td>1200</td>
+                                        <td>100</td>
+                                        <td class="text-center">
+                                            <i class="fas fa-check true-icon" nop-value="true"></i>
+                                        </td>
+                                        <td><a class="btn btn-default" href="Edit/1"><i class="fas fa-pencil-alt"></i>Edit</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <img src="https://admin-demo.nopcommerce.com/images/thumbs/0000022_digital-storm-vanquish-3-custom-performance-pc_75.jpeg">
+                                        </td>
+                                        <td>Digital Storm VANQUISH 3 Custom Performance PC</td>
+                                        <td>DS_VA3_PC</td>
+                                        <td>1259</td>
+                                        <td>100</td>
+                                        <td class="text-center">
+                                            <i class="fas fa-check true-icon" nop-value="true"></i>
+                                        </td>
+                                        <td><a class="btn btn-default" href="Edit/1"><i class="fas fa-pencil-alt"></i>Edit</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <img src="https://admin-demo.nopcommerce.com/images/thumbs/0000023_lenovo-ideacentre-600-all-in-one-pc_75.jpeg">
+                                        </td>
+                                        <td>Lenovo IdeaCentre 600 All-in-One PC</td>
+                                        <td>LE_IC_600</td>
+                                        <td>	500</td>
+                                        <td>100</td>
+                                        <td class="text-center">
+                                            <i class="fas fa-check true-icon" nop-value="true"></i>
+                                        </td>
+                                        <td><a class="btn btn-default" href="Edit/1"><i class="fas fa-pencil-alt"></i>Edit</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <img src="https://admin-demo.nopcommerce.com/images/thumbs/0000024_apple-macbook-pro-13-inch_75.jpeg">
+                                        </td>
+                                        <td>Apple MacBook Pro 13-inch</td>
+                                        <td>AP_MBP_13</td>
+                                        <td>1200</td>
+                                        <td>100</td>
+                                        <td class="text-center">
+                                            <i class="fas fa-check true-icon" nop-value="true"></i></td>
+                                        <td><a class="btn btn-default" href="Edit/1"><i class="fas fa-pencil-alt"></i>Edit</a></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </main>
+            <footer class="py-4 bg-light mt-auto">
+                <div class="container-fluid px-4">
+                    <div class="d-flex align-items-center justify-content-between small">
+                        <div class="text-muted">Copyright &copy; Your Website 2021</div>
+                        <div>
+                            <a href="#">Privacy Policy</a>
+                            &middot;
+                            <a href="#">Terms &amp; Conditions</a>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
+        crossorigin="anonymous"></script>
+    <script src="js/scripts.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js" crossorigin="anonymous"></script>
+    <script src="assets/demo/chart-area-demo.js"></script>
+    <script src="assets/demo/chart-bar-demo.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/simple-datatables@latest" crossorigin="anonymous"></script>
+    <script src="js/datatables-simple-demo.js"></script>
+</body>
+
 </html>

@@ -1,0 +1,29 @@
+.card-search .search-body {
+    display: block;
+    margin-top: 15px;
+}
+
+.label-wrapper {
+    float: right;
+    display: flex;
+    align-items: flex-start;
+}
+
+.label-wrapper .ico-help {
+    color: #3c8dbc;
+    font-size: 1.17em;
+    padding-left: 6px;
+    padding-top: .28em;
+} 
+
+
+.fa, .far, .fas {
+    padding-right: 5px; 
+     font-size: .9em; 
+}  
+
+.true-icon {
+    color: #007fcc;
+    font-size: 20px;
+}
+
