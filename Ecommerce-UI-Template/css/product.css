@@ -25,5 +25,29 @@
 .true-icon {
     color: #007fcc;
     font-size: 20px;
+} 
+
+.content-header {
+    padding: 15px 1rem;
+}
+
+.content-header > h1 {
+    margin-bottom: 10px;
+} 
+
+.content-header > h1 > small {
+    color: #0076BB;
+    font-weight: normal;
+    margin-left: 6px;
+    font-size: 65%;
+}  
+
+.content-header .float-right > .btn, .content-header .float-right > .btn-group {
+    float: left;
+    margin-left: 3px;
+    position: inherit;
+}
+.content-header .btn {
+    margin-bottom: 5px;
 }
 
