@@ -13,9 +13,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\marga\\Desktop\\Interview\\Ecommerce-Product-Features\\EcommerceApi\\Ecommerce\\Ecommerce.csproj",
-      "projectName": "Ecommerce",
-      "projectPath": "C:\\Users\\marga\\Desktop\\Interview\\Ecommerce-Product-Features\\EcommerceApi\\Ecommerce\\Ecommerce.csproj",
+      "projectUniqueName": "C:\\Users\\marga\\Desktop\\Interview\\Ecommerce-Product-Features\\EcommerceApi\\Ecommerce\\EcommerceAPI.csproj",
+      "projectName": "EcommerceAPI",
+      "projectPath": "C:\\Users\\marga\\Desktop\\Interview\\Ecommerce-Product-Features\\EcommerceApi\\Ecommerce\\EcommerceAPI.csproj",
       "packagesPath": "C:\\Users\\marga\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\marga\\Desktop\\Interview\\Ecommerce-Product-Features\\EcommerceApi\\Ecommerce\\obj\\",
       "projectStyle": "PackageReference",
