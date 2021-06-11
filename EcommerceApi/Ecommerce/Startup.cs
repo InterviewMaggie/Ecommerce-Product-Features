@@ -62,6 +62,7 @@ namespace Ecommerce
 
             services.AddScoped<IProductsRepository, ProductsRepository>();
             services.AddScoped<IProductCategoryRepository, ProductCategoryRepository>();
+            services.AddScoped<IProductAttributes, ProductAttributesRepository>();
             services.AddControllers();
         }
 
