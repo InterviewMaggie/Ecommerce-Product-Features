@@ -61,3 +61,5 @@ C:\Users\marga\Desktop\Interview\Ecommerce-Product-Features\EcommerceApi\Ecommer
 C:\Users\marga\Desktop\Interview\Ecommerce-Product-Features\EcommerceApi\Ecommerce\obj\Debug\netcoreapp3.1\EcommerceAPI.dll
 C:\Users\marga\Desktop\Interview\Ecommerce-Product-Features\EcommerceApi\Ecommerce\obj\Debug\netcoreapp3.1\EcommerceAPI.pdb
 C:\Users\marga\Desktop\Interview\Ecommerce-Product-Features\EcommerceApi\Ecommerce\obj\Debug\netcoreapp3.1\EcommerceAPI.genruntimeconfig.cache
+C:\Users\marga\Desktop\Interview\Ecommerce-Product-Features\EcommerceApi\Ecommerce\bin\Debug\netcoreapp3.1\AutoMapper.dll
+C:\Users\marga\Desktop\Interview\Ecommerce-Product-Features\EcommerceApi\Ecommerce\bin\Debug\netcoreapp3.1\AutoMapper.Extensions.Microsoft.DependencyInjection.dll

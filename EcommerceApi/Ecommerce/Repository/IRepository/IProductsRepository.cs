@@ -9,7 +9,8 @@ namespace EcommerceAPI.Repository
     public interface IProductsRepository
     {
         ICollection<Product> GetProducts();
-        Product GetProduct(int categoryId);
+        Product GetProductByCategoryId(int categoryId);
+        Product GetProductByProductId(int id);
         bool ProductExists(string name);
         bool ProductExists(int id);
         bool CreateProduct(Product product);

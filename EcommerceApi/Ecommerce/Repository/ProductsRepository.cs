@@ -21,11 +21,21 @@ namespace EcommerceAPI.Repository
             return Save();
         }
         /// <summary>
+        /// Get the product based on the productId
+        /// </summary>
+        /// <param name="productId"></param>
+        /// <returns></returns>
+        public Product GetProductByProductId(int productId)
+        {
+            return _dbContext.Products.FirstOrDefault(cat => cat.Id == productId);
+        }
+
+        /// <summary>
         /// Get the product based on the categoryId
         /// </summary>
         /// <param name="categoryId"></param>
         /// <returns></returns>
-        public Product GetProduct(int categoryId)
+        public Product GetProductByCategoryId(int categoryId)
         {
             return _dbContext.Products.FirstOrDefault(cat => cat.Id == categoryId);
         }
