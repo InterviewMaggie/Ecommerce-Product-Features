@@ -1,9 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "YnJ9ciwYJVCTrWlH7HEBU4KCzjufOkMH/FHbPQ2sHgmF3cxAIgUpPOWLM39VkdjUdAcv10rRwIpZqdk9dLxsAw==",
+  "dgSpecHash": "r8Ua7Zf7QeKTz9WQr+1akbMS5o5YhKVhehTc8SZbnlMVLx9qtrB7bD8YP5yD+/vglzR1iXE0xnmb5iHG6SIm2Q==",
   "success": true,
   "projectFilePath": "C:\\Users\\marga\\Desktop\\Interview\\Ecommerce-Product-Features\\EcommerceApi\\Ecommerce\\EcommerceAPI.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\marga\\.nuget\\packages\\automapper\\10.1.1\\automapper.10.1.1.nupkg.sha512",
+    "C:\\Users\\marga\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\8.1.1\\automapper.extensions.microsoft.dependencyinjection.8.1.1.nupkg.sha512",
     "C:\\Users\\marga\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\marga\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
     "C:\\Users\\marga\\.nuget\\packages\\microsoft.data.sqlclient\\2.0.1\\microsoft.data.sqlclient.2.0.1.nupkg.sha512",
@@ -66,7 +68,7 @@
     "C:\\Users\\marga\\.nuget\\packages\\system.private.datacontractserialization\\4.3.0\\system.private.datacontractserialization.4.3.0.nupkg.sha512",
     "C:\\Users\\marga\\.nuget\\packages\\system.private.uri\\4.3.2\\system.private.uri.4.3.2.nupkg.sha512",
     "C:\\Users\\marga\\.nuget\\packages\\system.reflection\\4.3.0\\system.reflection.4.3.0.nupkg.sha512",
-    "C:\\Users\\marga\\.nuget\\packages\\system.reflection.emit\\4.3.0\\system.reflection.emit.4.3.0.nupkg.sha512",
+    "C:\\Users\\marga\\.nuget\\packages\\system.reflection.emit\\4.7.0\\system.reflection.emit.4.7.0.nupkg.sha512",
     "C:\\Users\\marga\\.nuget\\packages\\system.reflection.emit.ilgeneration\\4.3.0\\system.reflection.emit.ilgeneration.4.3.0.nupkg.sha512",
     "C:\\Users\\marga\\.nuget\\packages\\system.reflection.emit.lightweight\\4.3.0\\system.reflection.emit.lightweight.4.3.0.nupkg.sha512",
     "C:\\Users\\marga\\.nuget\\packages\\system.reflection.extensions\\4.3.0\\system.reflection.extensions.4.3.0.nupkg.sha512",
