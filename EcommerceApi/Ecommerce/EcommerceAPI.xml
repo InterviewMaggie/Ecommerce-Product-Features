@@ -4,6 +4,19 @@
         <name>EcommerceAPI</name>
     </assembly>
     <members>
+        <member name="M:EcommerceAPI.Controllers.ProductsCategoryController.GetProductCategories">
+            <summary>
+            Get a list of product Categories
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:EcommerceAPI.Controllers.ProductsCategoryController.CreateProduct(EcommerceAPI.DTO.ProductCategoryDTO)">
+            <summary>
+            Create a product category
+            </summary>
+            <param name="pCategoryDTO">The Id of the product</param>
+            <returns></returns>
+        </member>
         <member name="M:EcommerceAPI.Controllers.ProductsController.GetProducts">
             <summary>
             Get list of products
