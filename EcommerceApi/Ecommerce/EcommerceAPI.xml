@@ -1,0 +1,75 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>EcommerceAPI</name>
+    </assembly>
+    <members>
+        <member name="M:EcommerceAPI.Controllers.ProductsController.GetProducts">
+            <summary>
+            Get list of products
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:EcommerceAPI.Controllers.ProductsController.GetProduct(System.Int32)">
+            <summary>
+            Get individual product
+            </summary>
+            <param name="productId">The Id of the product</param>
+            <returns></returns>
+        </member>
+        <member name="M:EcommerceAPI.Controllers.ProductsController.CreateProduct(EcommerceAPI.DTO.ProductDTO)">
+            <summary>
+            Create a product
+            </summary>
+            <param name="productsDTO">The Id of the product</param>
+            <returns></returns>
+        </member>
+        <member name="M:EcommerceAPI.Repository.ProductsRepository.GetProductByProductId(System.Int32)">
+            <summary>
+            Get the product based on the productId
+            </summary>
+            <param name="productId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:EcommerceAPI.Repository.ProductsRepository.GetProductByCategoryId(System.Int32)">
+            <summary>
+            Get the product based on the categoryId
+            </summary>
+            <param name="categoryId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:EcommerceAPI.Repository.ProductsRepository.GetProducts">
+            <summary>
+            Get a list of all products ordered by productName
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:EcommerceAPI.Repository.ProductsRepository.ProductExists(System.String)">
+            <summary>
+            Check if a product exist by name
+            </summary>
+            <param name="name"></param>
+            <returns></returns>
+        </member>
+        <member name="M:EcommerceAPI.Repository.ProductsRepository.ProductExists(System.Int32)">
+            <summary>
+            check if a product exists based on the id
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:EcommerceAPI.Repository.ProductsRepository.Save">
+            <summary>
+            Save new records or updated to the database
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:EcommerceAPI.Repository.ProductsRepository.UpdateProduct(EcommerceAPI.Models.Product)">
+            <summary>
+            Modify Product 
+            </summary>
+            <param name="product"></param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>

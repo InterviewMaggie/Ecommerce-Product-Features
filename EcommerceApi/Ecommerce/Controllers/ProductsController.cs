@@ -72,14 +72,14 @@ namespace EcommerceAPI.Controllers
         [ProducesResponseType(StatusCodes.Status201Created, Type = typeof(ProductDTO))]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
-        public IActionResult CreateProduct([FromBody] ProductDTO productDTO)
+        public IActionResult CreateProduct([FromBody] ProductDTO productsDTO)
         {
-            if (productDTO == null)
+            if (productsDTO == null)
             {
                 return BadRequest(ModelState);
             }
 
-            if (_pRepo.ProductExists(productDTO.ProductName))
+            if (_pRepo.ProductExists(productsDTO.ProductName))
             {
                 ModelState.AddModelError("", "Product already Exists!");
                 return StatusCode(404, ModelState);
@@ -90,11 +90,11 @@ namespace EcommerceAPI.Controllers
                 return BadRequest(ModelState);
             }
 
-            Product productObj = _mapper.Map<Product>(productDTO);
+            Product productObj = _mapper.Map<Product>(productsDTO);
 
             if (!_pRepo.CreateProduct(productObj))
             {
-                ModelState.AddModelError("", $"Something went wrong when saving the record {productDTO.ProductName}");
+                ModelState.AddModelError("", $"Something went wrong when saving the record {productsDTO.ProductName}");
                 return StatusCode(500, ModelState);
             }
            
