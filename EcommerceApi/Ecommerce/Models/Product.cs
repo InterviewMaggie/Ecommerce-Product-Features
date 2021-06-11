@@ -1,6 +1,6 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations;
-
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace EcommerceAPI.Models
 {
@@ -23,5 +23,9 @@ namespace EcommerceAPI.Models
         public DateTime Created { get; set; }
         [Required]
         public string PreviewImage { get; set; }
+        [Required]
+        public int ProductCategoryId { get; set; }
+        [ForeignKey("ProductCategoryId")]
+        public ProductCategory ProductCategory { get; set; }
     }
 }
