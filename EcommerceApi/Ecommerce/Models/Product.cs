@@ -5,12 +5,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 namespace EcommerceAPI.Models
 {
     public class Product
-    {/*
-        id int NOT NULL,
-	productName nvarchar(250) NOT NULL,
-    category_id int NOT NULL,
-	subcategory_id int NOT NULL,
-	PreviewImages nvarchar NOT NULL,*/
+    {
         [Key]
         public int Id { get; set; }
         [Required]
