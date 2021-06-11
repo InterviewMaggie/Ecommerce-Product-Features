@@ -17,5 +17,7 @@ namespace EcommerceAPI.DTO
         public string SKU { get; set; }
         public DateTime Created { get; set; }
         public string PreviewImage { get; set; }
+        [Required]
+        public int ProductCategoryId { get; set; }
     }
 }
