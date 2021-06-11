@@ -7,6 +7,7 @@ namespace EcommerceAPI.Models
     {
         [Key]
         public int  ProductCategoryId { get; set; }
+        [Required]
         public string CategoryName { get; set; }
     }
 }
