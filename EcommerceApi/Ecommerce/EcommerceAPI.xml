@@ -4,6 +4,19 @@
         <name>EcommerceAPI</name>
     </assembly>
     <members>
+        <member name="M:EcommerceAPI.Controllers.ProductsCategoryController.GetProductCategories">
+            <summary>
+            Get a list of product Categories
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:EcommerceAPI.Controllers.ProductsCategoryController.CreateProduct(EcommerceAPI.DTO.ProductCategoryDTO)">
+            <summary>
+            Create a product category
+            </summary>
+            <param name="pCategoryDTO">The Id of the product</param>
+            <returns></returns>
+        </member>
         <member name="M:EcommerceAPI.Controllers.ProductsController.GetProducts">
             <summary>
             Get list of products
@@ -17,11 +30,51 @@
             <param name="productId">The Id of the product</param>
             <returns></returns>
         </member>
+        <member name="M:EcommerceAPI.Controllers.ProductsController.GetProductWithCategory(System.Int32)">
+            <summary>
+            Get individual product
+            </summary>
+            <param name="categoryId">The Id of the product</param>
+            <returns></returns>
+        </member>
         <member name="M:EcommerceAPI.Controllers.ProductsController.CreateProduct(EcommerceAPI.DTO.ProductDTO)">
             <summary>
             Create a product
             </summary>
             <param name="productsDTO">The Id of the product</param>
+            <returns></returns>
+        </member>
+        <member name="M:EcommerceAPI.Repository.ProductCategoryRepository.CreateProductCategory(EcommerceAPI.Models.ProductCategory)">
+            <summary>
+            Add product category data
+            </summary>
+            <param name="productcategory"></param>
+            <returns></returns>
+        </member>
+        <member name="M:EcommerceAPI.Repository.ProductCategoryRepository.GetProductCategories">
+            <summary>
+            Get a list of all productcategory ordered by productName
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:EcommerceAPI.Repository.ProductCategoryRepository.ProductCategoryExists(System.String)">
+            <summary>
+            Check if a productCategory exist by name
+            </summary>
+            <param name="name"></param>
+            <returns></returns>
+        </member>
+        <member name="M:EcommerceAPI.Repository.ProductCategoryRepository.ProductCategoryExists(System.Int32)">
+            <summary>
+            check if a productCategory exists based on the id
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:EcommerceAPI.Repository.ProductCategoryRepository.Save">
+            <summary>
+            Save new records or updated to the database
+            </summary>
             <returns></returns>
         </member>
         <member name="M:EcommerceAPI.Repository.ProductsRepository.GetProductByProductId(System.Int32)">

@@ -62,6 +62,28 @@ namespace EcommerceAPI.Controllers
             return Ok(prouctObjDTO);
         }
 
+        /// <summary>
+        /// Get individual product
+        /// </summary>
+        /// <param name="categoryId">The Id of the product</param>
+        /// <returns></returns>
+        [HttpGet("[action]/{categoryId:int}")]
+        [ProducesResponseType(200, Type = typeof(ProductDTO))]
+        [ProducesResponseType(404)]
+
+        [ProducesDefaultResponseType]
+        public IActionResult GetProductWithCategory(int categoryId)
+        {
+            var obj = _pRepo.GetProductByProductId(categoryId);
+            if (obj == null)
+            {
+                return NotFound();
+            }
+            ProductDTO prouctObjDTO = _mapper.Map<ProductDTO>(obj);
+
+            return Ok(prouctObjDTO);
+        }
+
 
         /// <summary>
         /// Create a product
