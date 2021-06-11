@@ -7,22 +7,22 @@ using System.Threading.Tasks;
 
 namespace EcommerceAPI.Repository
 {
-    public class ProductCategoryRepository : IProductCategoryRepository
+    public class ProductAttributesRepository : IProductAttributes
     {
         private readonly ApplicationDbContext _dbContext;
 
-        public ProductCategoryRepository(ApplicationDbContext dbContext)
+        public ProductAttributesRepository(ApplicationDbContext dbContext)
         {
             _dbContext = dbContext;
         }
         /// <summary>
-        /// Add product category data
+        /// Add product Attribute data
         /// </summary>
-        /// <param name="productcategory"></param>
+        /// <param name="productattribute"></param>
         /// <returns></returns>
-        public bool CreateProductCategory(ProductCategory productcategory)
+        public bool CreateProductAttribute(ProductAttribute productattribute)
         {
-            _dbContext.ProductCategories.Add(productcategory);
+            _dbContext.ProductAttributes.Add(productattribute);
             return Save();
         }
        
@@ -31,9 +31,19 @@ namespace EcommerceAPI.Repository
         /// Get a list of all productcategory ordered by productName
         /// </summary>
         /// <returns></returns>
-        public ICollection<ProductCategory> GetProductCategories()
+        public ICollection<ProductAttribute> GetProductAttributes()
         {
-            return _dbContext.ProductCategories.OrderBy(name => name.CategoryName).ToList();
+            return _dbContext.ProductAttributes.OrderBy(name => name.AttributeName).ToList();
+        }
+
+        /// <summary>
+        /// Get the product based on the categoryId
+        /// </summary>
+        /// <param name="attributeId"></param>
+        /// <returns></returns>
+        public Product GetProductByAttributeId(int attributeId)
+        {
+            return _dbContext.Products.FirstOrDefault(cat => cat.Id == attributeId);
         }
 
         /// <summary>
@@ -41,19 +51,19 @@ namespace EcommerceAPI.Repository
         /// </summary>
         /// <param name="name"></param>
         /// <returns></returns>
-        public bool ProductCategoryExists(string name)
+        public bool ProductAttributeExists(string name)
         {
-            return _dbContext.ProductCategories.Any(prod => prod.CategoryName.ToLower().Trim() == name.ToLower().Trim());
+            return _dbContext.ProductAttributes.Any(prod => prod.AttributeName.ToLower().Trim() == name.ToLower().Trim());
         }
 
         /// <summary>
-        /// check if a productCategory exists based on the id
+        /// check if a productAttribute exists based on the id
         /// </summary>
         /// <param name="id"></param>
         /// <returns></returns>
-        public bool ProductCategoryExists(int id)
+        public bool ProductAttributeExists(int id)
         {
-            return _dbContext.ProductCategories.Any(prod => prod.ProductCategoryId == id);
+            return _dbContext.ProductAttributes.Any(prod => prod.ProductAttributeId == id);
         }
 
         /// <summary>

@@ -15,6 +15,7 @@ namespace EcommerceAPI.Mapper
             
             CreateMap<Product, ProductDTO>().ReverseMap();
             CreateMap<ProductCategory, ProductCategoryDTO>().ReverseMap();
+            CreateMap<ProductAttribute, ProductAttributeDTO>().ReverseMap();
         }
     }
 }
