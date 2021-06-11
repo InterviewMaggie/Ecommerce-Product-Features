@@ -17,6 +17,9 @@ namespace EcommerceAPI.Models
         public int Id { get; set; }
         [Required]
         public string ProductName { get; set; }
+        [Required]
+        public string Price { get; set; }
+        public string SKU { get; set; }
         public DateTime Created { get; set; }
         [Required]
         public string PreviewImage { get; set; }
