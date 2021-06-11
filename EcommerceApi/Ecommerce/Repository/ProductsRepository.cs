@@ -17,7 +17,7 @@ namespace EcommerceAPI.Repository
         }
         public bool CreateProduct(Product product)
         {
-            _dbContext.Add(product);
+            _dbContext.Products.Add(product);
             return Save();
         }
         /// <summary>
